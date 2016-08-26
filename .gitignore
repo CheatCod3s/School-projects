@@ -1,0 +1,10 @@
+# Tämä on valmis gitignore-tiedosto, jotta versionhallintaan
+# ei vahingossa mene ilmiselvästi vääriä tiedostoja.
+
+*.o
+a.out
+a.exe
+*.gch
+*~
+.\#*
+\#*\#
