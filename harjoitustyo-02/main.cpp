@@ -1,4 +1,4 @@
-// Ennakkotehtava-02
+// Harjoitustyö-02
 // sandra.raitaniemi@student.tut.fi
 // Sandra Raitaniemi
 // 254081
@@ -360,7 +360,7 @@ int main() {
                             if (kaupat_joissa_halvin_hinta.size() == 0){
                                 cout << "Tuote on tilapäisesti loppu kaikkialta." << endl;
                             } else {
-                                cout <<setprecision(2)<< fixed << hinta << endl;
+                                cout <<setprecision(2)<< fixed << hinta <<" euroa" <<endl;
                                 vector<string>::iterator iter;
                                 for (iter = kaupat_joissa_halvin_hinta.begin(); iter != kaupat_joissa_halvin_hinta.end(); ++ iter){
                                     cout << *iter << endl;
