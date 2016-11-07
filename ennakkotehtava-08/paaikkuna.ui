@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Paaikkuna</class>
+ <widget class="QWidget" name="Paaikkuna">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>365</width>
+    <height>182</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>km/h -&gt; mailia/h</string>
+  </property>
+  <widget class="QPushButton" name="nollaa_button">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>85</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nollaa</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lopetaButton">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>130</y>
+     <width>85</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lopeta</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="kmh_spinbox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="suffix">
+    <string>  km/h</string>
+   </property>
+   <property name="maximum">
+    <number>300</number>
+   </property>
+  </widget>
+  <widget class="QSlider" name="kmh_slider">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>20</y>
+     <width>221</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>300</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mailiLabel">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>80</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mailia/h</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="miles_lcd">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="segmentStyle">
+    <enum>QLCDNumber::Flat</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>lopetaButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Paaikkuna</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>267</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kmh_slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>kmh_spinbox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kmh_spinbox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>kmh_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
