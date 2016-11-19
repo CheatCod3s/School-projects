@@ -20,7 +20,7 @@ public:
 public slots:
     // Ikkunan alustus.
     void alusta();
-    // BMI:n lasku.
+    // Painoindeksin lasku.
     void laske_bmi();
     // BMI:n tulkitseminen taulukon avulla.
     void tulkitse_bmi(double);

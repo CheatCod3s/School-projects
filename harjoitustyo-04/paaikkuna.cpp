@@ -7,8 +7,8 @@ Paaikkuna::Paaikkuna(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Jos pituutta tai painoa muutetaan liukuvalla valikolla tai skrollivalikolla,
-    // BMI lasketaan.
+    // Aina, kun pituutta tai painoa muutetaan liukuvalla valikolla tai skrollivalikolla,
+    // painoindeksi lasketaan.
     connect(ui->pituusSpin, SIGNAL(valueChanged(int)),
             this, SLOT(laske_bmi()));
     connect(ui->painoSpin, SIGNAL(valueChanged(int)),
