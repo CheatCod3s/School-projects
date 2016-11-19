@@ -13,6 +13,12 @@ Paaikkuna::Paaikkuna(QWidget *parent) :
             this, SLOT(laske_bmi()));
     connect(ui->painoSpin, SIGNAL(valueChanged(int)),
             this, SLOT(laske_bmi()));
+
+    // Lisätään sukupuolivalikkotoiminnat ActionGrouppiin,
+    // jolloin vain toinen sukupuoli voi olla valittuna.
+    QActionGroup *AG = new QActionGroup(ui->menuSukupuoli);
+    AG->addAction(ui->actionNainen);
+    AG->addAction(ui->actionMies);
 }
 
 Paaikkuna::~Paaikkuna()
@@ -47,9 +53,6 @@ void Paaikkuna::laske_bmi()
     // Kun käyttäjä on asettanut pituuden ja painon,
     // näytetään BMI:n arvo ikkunassa.
     if (pituus > 0 and BMI > 0){
-
-        //std::fixed;
-        //std:: fixed << std::setprecision(1) << BMI;
         ui->bmiLabel->setNum(BMI);
         tulkitse_bmi(BMI);
 
@@ -112,9 +115,6 @@ void Paaikkuna::tulkitse_bmi(double BMI)
 void Paaikkuna::on_actionNainen_triggered()
 {
     ui->sukupuoliLabel->setText("nainen");
-    // Koska vain toinen sukupuolista voi olla valittuna, poistetaan
-    // miesvaihtoehdon valinta.
-    ui->actionMies->setChecked(false);
     // Jos käyttäjä valitseekin sukupuolen vasta syötettyään mittansa,
     // lasketaan BMI valitulle sukupuolelle.
     laske_bmi();
@@ -124,7 +124,6 @@ void Paaikkuna::on_actionNainen_triggered()
 void Paaikkuna::on_actionMies_triggered()
 {
     ui->sukupuoliLabel->setText("mies");
-    ui->actionNainen->setChecked(false);
     laske_bmi();
 }
 
@@ -139,7 +138,8 @@ void Paaikkuna::on_actionAlkutila_triggered()
 // lopetuksen.
 void Paaikkuna::on_actionLopeta_triggered()
 {
-    QApplication::quit();
+    // Suljetaan ikkuna.
+    Paaikkuna::close();
 }
 
 
