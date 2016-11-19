@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMenuBar>
+#include <QActionGroup>
 
 namespace Ui {
 class Paaikkuna;
