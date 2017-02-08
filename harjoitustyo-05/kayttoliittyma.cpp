@@ -37,7 +37,7 @@ bool kayttoliittyma(Lista& lista){
 
             // Kun käyttäjä syöttää "loppu", false palautetaan pääohjelmaan
             // ja ohjelman suoritus lopetetaan.
-            if ( kasky == "loppu" ) {
+            if ( kasky == "loppu" and kaskyssa_sanoja) {
                 return false;
 
             } else if ( kasky == "reppu" and kaskyssa_sanoja == 1 ) {
